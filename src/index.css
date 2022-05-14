@@ -1,13 +1,111 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .editor-window, .preview-window-wrapper{
+        /* height: 100vh; */
+       
+    }
+
+.preview-window-wrapper{
+    width: 700px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    .preview > h1, h2, h3, h4, h5, h6{
+        /* font-family: auto; */
+        @apply py-2
+        mb-2 rounded-md
+       
+    }
+
+
+        h1{
+             @apply text-5xl
+             my-2
+
+        }
+
+        h2{
+            @apply text-4xl
+            my-2
+        }
+        h3{
+            @apply text-3xl my-2
+        }
+        h4{
+            @apply text-2xl my-2
+        }
+        h5{
+            @apply text-xl my-2
+        }
+        h6{
+            @apply text-lg my-2
+        }
+        p{
+            word-break: break-all;
+            @apply text-base
+            my-2 
+
+        }
+        /* img{
+            @apply w-full
+        } */
+        a{
+            @apply text-blue-500
+        }
+
+        br{
+            @apply my-4
+        }
+        ul{
+            @apply ml-4 list-disc
+        }
+        ol{
+            @apply list-decimal ml-4
+        }
+        hr{
+            @apply my-2
+        }
+        pre{
+            @apply p-2 bg-red-50 
+            border-2 border-red-300 text-pink-600 font-mono
+        }
+        code{
+            @apply font-mono whitespace-pre-wrap bg-red-50 text-pink-600  rounded-sm px-1
+        }
+        blockquote{
+            @apply border-l-4 border-blue-500 px-2 py-1
+
+            }
+
+        @media screen and (max-width: 1535px){
+            .preview-window-wrapper{
+                width:570px;
+            }
+            
+        }
+        @media screen and (max-width: 1280px){
+            .preview-window-wrapper{
+                width:445px;
+            }
+            
+        }
+        @media screen and (max-width: 1024px){
+            .preview-window-wrapper{
+                width:350px;
+            }
+            
+        }
+        @media screen and (max-width: 768px){
+            .editor-wrapper{
+                @apply flex-col
+            }
+
+            .preview-window-wrapper{
+                @apply w-full
+            }
+            
+        }
+   
 }
