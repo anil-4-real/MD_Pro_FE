@@ -36,7 +36,7 @@ const Login = () => {
         showToast("Something went wrong", "error");
       }
     } catch (e) {
-      console.log(e);
+      showToast("invalid credentials / something went wrong", "error");
     }
   };
 
